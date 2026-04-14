@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Jet - JETLUX</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet">
+
+
+</head>
+
+<body>
+  <video autoplay muted loop class="bg-video">
+    <source
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260212_043536_e0d3c69f-5c0c-4533-8395-fbe962587446.mp4">
+  </video>
+
+
+
+  <div class="booking-page">
+
+    <div class="booking-card">
+
+      <h1 class="booking-title">Book Your Jet</h1>
+      <p class="booking-sub">Plan your luxury journey in seconds</p>
+
+      <div class="form-grid">
+
+        <div class="input-group">
+          <label>From</label>
+          <input type="text" id="from" placeholder="New York">
+        </div>
+
+        <div class="input-group">
+          <label>To</label>
+          <input type="text" id="to" placeholder="London">
+        </div>
+
+        <div class="input-group">
+          <label>Departure Date</label>
+          <input type="date">
+        </div>
+
+        <div class="input-group">
+          <label>Return Date</label>
+          <input type="date">
+        </div>
+
+        <div class="input-group">
+          <label>Passengers</label>
+          <select id="passengers">
+            <option>1-3</option>
+            <option>4-6</option>
+            <option>7-10</option>
+            <option>10+</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Jet Type</label>
+          <select id="jet">
+            <option>Light Jet</option>
+            <option>Mid Jet</option>
+            <option>Heavy Jet</option>
+          </select>
+        </div>
+
+        <div class="input-group full">
+          <label>Special Requests</label>
+          <input type="text" placeholder="VIP service, catering...">
+        </div>
+
+      </div>
+
+      <button class="submit-btn">Check Availability</button>
+
+      <div class="price-box">
+        <p>Estimated Price</p>
+        <h3 id="price">$18,500</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+
+    function calculatePrice() {
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      const passengers = document.getElementById("passengers").value;
+      const jet = document.getElementById("jet").value;
+
+      let distance = (from.length + to.length) * 300;
+
+      let jetRate = {
+        "Light Jet": 5,
+        "Mid Jet": 8,
+        "Heavy Jet": 12
+      };
+
+      let passengerRate = {
+        "1-3": 1,
+        "4-6": 1.5,
+        "7-10": 2,
+        "10+": 3
+      };
+
+      let price = distance * jetRate[jet] * passengerRate[passengers];
+
+      document.getElementById("price").innerText =
+        "$" + Math.round(price).toLocaleString();
+    }
+
+
+    document.querySelectorAll("input, select").forEach(el => {
+      el.addEventListener("input", calculatePrice);
+    });
+
+
+    window.onload = () => {
+      document.querySelector(".booking-card").classList.add("show");
+    };
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Center - JETLUX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ROOT */
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --muted: rgba(255,255,255,0.6);
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background:black;
+  color:white;
+}
+
+/* Background */
+.bg-video {
+  position: fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index:-1;
+}
+
+/* Navbar */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+}
+
+.logo {
+  font-family:"Space Grotesk";
+  font-size:20px;
+}
+
+.nav-links {
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a {
+  color:white;
+  text-decoration:none;
+  opacity:0.7;
+}
+
+.nav-links a:hover { opacity:1; }
+
+/* Hero */
+.hero {
+  padding:100px 60px;
+  text-align:center;
+}
+
+.hero h1 {
+  font-size:60px;
+  font-family:"Space Grotesk";
+}
+
+.hero p {
+  margin-top:10px;
+  color:var(--muted);
+}
+
+/* Search */
+.search-box {
+  margin-top:30px;
+}
+
+.search-box input {
+  width:100%;
+  max-width:500px;
+  padding:14px;
+  border-radius:50px;
+  border:1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color:white;
+}
+
+/* Sections */
+.section {
+  padding:60px;
+}
+
+/* Grid */
+.grid {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:30px;
+}
+
+/* Card */
+.card {
+  padding:30px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(25px);
+  border:1px solid rgba(255,255,255,0.15);
+  transition:0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* FAQ */
+.faq {
+  max-width:800px;
+  margin:auto;
+}
+
+.faq-item {
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding:20px 0;
+  cursor:pointer;
+}
+
+.faq-item h3 {
+  font-size:18px;
+}
+
+.faq-item p {
+  color:var(--muted);
+  margin-top:10px;
+  display:none;
+}
+
+/* Contact */
+.contact {
+  text-align:center;
+}
+
+.btn {
+  margin-top:20px;
+  padding:12px 25px;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,0.3);
+  display:inline-block;
+  cursor:pointer;
+}
+
+.btn:hover {
+  background:white;
+  color:black;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .grid {
+    grid-template-columns:1fr;
+  }
+  .navbar, .hero, .section {
+    padding:20px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+ <video autoplay muted loop class="bg-video">
+        <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260212_043536_e0d3c69f-5c0c-4533-8395-fbe962587446.mp4">
+    </video>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">JETLUX</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="fleet.html">Fleet</a>
+    <a href="book.html">Book</a>
+    <a href="careers.html">Careers</a>
+    <a href="help.html">Help</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Help Center</h1>
+  <p>Find answers or get support for your journey</p>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search for help...">
+  </div>
+</section>
+
+<!-- Help Categories -->
+<section class="section grid">
+
+  <div class="card">
+    <h3>Booking & Reservations</h3>
+    <p>Manage bookings, cancellations, and flight changes.</p>
+  </div>
+
+  <div class="card">
+    <h3>Payments & Pricing</h3>
+    <p>Understand pricing, invoices, and payment methods.</p>
+  </div>
+
+  <div class="card">
+    <h3>Flight Experience</h3>
+    <p>Learn about onboard services and luxury features.</p>
+  </div>
+
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <h2 style="text-align:center; font-family:Space Grotesk;">Frequently Asked Questions</h2>
+
+  <div class="faq">
+
+    <div class="faq-item">
+      <h3>How do I book a jet?</h3>
+      <p>You can book directly through our booking page or contact our support team.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I cancel or reschedule?</h3>
+      <p>Yes, flexible cancellation and rescheduling options are available.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is included in the price?</h3>
+      <p>Pricing includes aircraft, crew, fuel, and basic services.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Are pets allowed onboard?</h3>
+      <p>Yes, pet-friendly flights are available upon request.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact">
+  <h2>Still need help?</h2>
+  <p style="color:var(--muted);">Our team is available 24/7</p>
+  <div class="btn">Contact Support ↗</div>
+</section>
+
+<script>
+
+// FAQ Toggle
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    let p = item.querySelector("p");
+    p.style.display = p.style.display === "block" ? "none" : "block";
+  });
+});
+
+</script>
+
+</body>
+</html>
